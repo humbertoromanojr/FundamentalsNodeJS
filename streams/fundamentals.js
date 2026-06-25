@@ -1,4 +1,5 @@
-import { Readable, Writable } from "node:stream";
+import { Readable, Writable, Transform } from "node:stream";
+import { setTimeout } from "node:timers/promises";
 
 // ------------ Readable
 class OneToHundredStream extends Readable {
@@ -7,13 +8,15 @@ class OneToHundredStream extends Readable {
   _read() {
     const i = this.index++;
 
-    if (i > 100) {
-      this.push(null);
-    } else {
-      const buf = Buffer.from(String(i));
+    setTimeout(() => {
+      if (i > 100) {
+        this.push(null);
+      } else {
+        const buf = Buffer.from(String(i));
 
-      this.push(buf);
-    }
+        this.push(buf);
+      }
+    }, 1000);
   }
 }
 
@@ -27,4 +30,17 @@ class MultiplyByTenStream extends Writable {
   }
 }
 
-new OneToHundredStream().pipe(new MultiplyByTenStream());
+// new OneToHundredStream().pipe(new MultiplyByTenStream());
+
+// ------------ Transform
+class InverseNumberStream extends Transform {
+  _transform(chunk, encoding, callback) {
+    const transformed = Number(chunk.toString()) * -1;
+
+    callback(null, Buffer.from(String(transformed)));
+  }
+}
+
+new OneToHundredStream()
+  .pipe(new InverseNumberStream())
+  .pipe(new MultiplyByTenStream());
