@@ -10,7 +10,7 @@ Fundamentals Node JS
 
 ## Shields
 
-![Badge](https://img.shields.io/static/v1?label=reactnative&message=FrameWork&color=blue&style=for-the-badge&logo=REACT)
+![Badge](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
 ![Badge](https://img.shields.io/github/issues/humbertoromanojr/FundamentalsNodeJS?logo=visual-studio-code&style=plastic&logo=appveyor)
 ![Badge](https://img.shields.io/github/forks/humbertoromanojr/FundamentalsNodeJS)
@@ -76,7 +76,9 @@ Made with <img src="https://drive.google.com/uc?export=view&id=1bb7UVQdQc1QpCIGq
 
 ##
 
-<img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" /> Read more below <img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" />
+<h2 align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" /> Read more below <img src="https://drive.google.com/uc?export=view&id=1lAPQY5CLSU4ofNI7-kTS8SMtKo6NZt-B" alt="" width="22" border="0" />
+</h2>
 
 ##
 
@@ -118,16 +120,16 @@ server.listen(port, hostname, () => {
 });
 ```
 
-Save the file. Then, in the terminal window, to run the hello-world.js file, enter:<br />
+- Save the file. Then, in the terminal window, to run the hello-world.js file, enter:<br />
 
 node hello-world.js<br />
 bash<br /><br />
 
-Output like this should appear in the terminal:<br />
+- Output like this should appear in the terminal:<br />
 
 Server running at http://127.0.0.1:3000/<br />
 console<br /><br />
 
-Now, open any preferred web browser and visit http://127.0.0.1:3000.<br />
+- Now, open any preferred web browser and visit http://127.0.0.1:3000.<br />
 
-If the browser displays the string Hello, World!, that indicates the server is working.<br />
+- If the browser displays the string Hello, World!, that indicates the server is working.<br />
