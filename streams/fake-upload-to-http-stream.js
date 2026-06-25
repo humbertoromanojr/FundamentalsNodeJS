@@ -21,4 +21,10 @@ class OneToHundredStream extends Readable {
 fetch("http://localhost:3002", {
   method: "POST",
   body: new OneToHundredStream(),
-});
+})
+  .then((res) => {
+    return res.text();
+  })
+  .then((data) => {
+    console.log(data);
+  });
