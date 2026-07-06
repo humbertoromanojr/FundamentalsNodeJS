@@ -1,21 +1,10 @@
 import http from "node:http";
+import { randomUUID } from "node:crypto";
 
 import { json } from "./middlewares/json.js";
+import { Database } from "./middlewares/database.js";
 
-// Get => Buscar um recurso do backend
-// POST => Criar um recurso do backend
-// PUT => Atualizar um recurso no backend
-// PATCH => Atualizar uma informação específica de um recurso no backend
-// DELETE => Deletar um recurso no backend
-
-// Get /users => Buscando usuários do backend
-// POST /users => Criar um usuário no backend
-
-// Stateful ------- Stateless
-
-// JSON - Javascript Object Notation
-
-const users = [];
+const database = new Database();
 
 const server = http.createServer(async (req, res) => {
   const { method, url } = req;
@@ -23,20 +12,41 @@ const server = http.createServer(async (req, res) => {
   await json(req, res);
 
   if (method === "GET" && url === "/users") {
-    return res
-      .setHeader("Content-type", "application/json")
-      .end(JSON.stringify(users));
+    const users = database.select("users");
+
+    return res.end(JSON.stringify(users));
   }
 
   if (method === "POST" && url === "/users") {
+    // Early return: Se não tem body ou se o JSON era inválido
+    if (!req.body) {
+      return res.writeHead(400).end(
+        JSON.stringify({
+          error: "Request body is required and must be valid JSON",
+        }),
+      );
+    }
+
     const { name, email } = req.body;
 
-    users.push({
-      id: 1,
+    // Validação extra (bônus de dev experiente)
+    if (!name || !email) {
+      return res.writeHead(400).end(
+        JSON.stringify({
+          error: "Name and email are required",
+        }),
+      );
+    }
+
+    const user = {
+      id: randomUUID(),
       name,
       email,
-    });
+    };
 
+    database.insert("users", user);
+
+    // Boa prática: retornar o recurso criado com status 201
     return res.writeHead(201).end();
   }
 
