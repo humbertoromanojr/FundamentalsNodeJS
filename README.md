@@ -24,8 +24,9 @@ Fundamentals Node JS
   <br /><br />
 
 - [Node JS](https://nodejs.org/en/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://v3.vitejs.dev/guide/)
+  - [Http]()
+  - [Fs]()
+  - [Crypto]()
 
 ## Demonstration
 
