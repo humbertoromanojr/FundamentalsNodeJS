@@ -37,15 +37,15 @@ Fundamentals Node JS
 
 ### Install
 
-Install React Native Expo <br />
-`npx create-expo-app@latest --template FundamentalsNodeJS` <br /><br />
+Creating a Backend Project with Node.js <br />
+`npm init -y` <br /><br />
 
-Install Lucide and SVG<br />
-`npm install lucide-react-native react-native-svg`<br /><br />
+Running the backend on port 3001<br />
+`npm run dev`<br /><br />
 
 Clone project to repository:<br />
 <img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" />
-git clone `https://humbertoromanojr@bitbucket.org/humbertoromanojr/FundamentalsNodeJS.git`
+git clone `https://github.com/humbertoromanojr/FundamentalsNodeJS`
 
 <img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> Go to `FundamentalsNodeJS` folder <br />
 
@@ -53,7 +53,7 @@ Install node_modules <br />
 <img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> `npm i`
 
 Run application <br />
-<img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> `npx start`
+<img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> `npm run dev`
 
 ##
 
