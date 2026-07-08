@@ -20,8 +20,24 @@ export class Database {
     fs.writeFile(databasePath, JSON.stringify(this.#database));
   }
 
-  select(table) {
-    const data = this.#database[table] ?? [];
+  /* What SOME Does
+
+    { name: 'humberto', email: 'humberto@gmail.com' }
+    [ ['name', 'humberto'], ['email', 'humberto@gmail.com'] ]
+  */
+
+  select(table, search) {
+    let data = this.#database[table] ?? [];
+
+    if (search) {
+      data = data.filter((row) => {
+        return Object.entries(search).some(([key, value]) => {
+          return row[key].toLowerCase().includes(value.toLowerCase());
+        });
+      });
+    }
+
+    console.log("select: ", data);
 
     return data;
   }
