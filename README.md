@@ -24,9 +24,9 @@ Fundamentals Node JS
   <br /><br />
 
 - [Node JS](https://nodejs.org/en/)
-  - [Http]()
-  - [Fs]()
-  - [Crypto]()
+  - [Http](https://github.com/nodejs/node/blob/main/doc/api/http.md)
+  - [Fs](https://github.com/nodejs/node/blob/main/doc/api/fs.md)
+  - [Crypto](https://github.com/nodejs/node/blob/main/doc/api/crypto.md)
 
 ## Demonstration
 
